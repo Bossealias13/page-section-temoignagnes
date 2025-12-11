@@ -22,4 +22,4 @@ Une solution au challenge [Testimonials Grid Section sur Frontend Mentor](https:
 👤 Auteur
 Bosse Christ
 
-Frontend Mentor - @Bossealias13
+Frontend Mentor - [@Bossealias13]
