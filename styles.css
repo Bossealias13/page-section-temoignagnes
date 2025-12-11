@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --Blanc: hsl(0, 0%, 100%);
+    --Violet-50: hsl(260, 100%, 95%);
+    --Violet-300: hsl(264, 82%, 80%);
+    --Violet-500: hsl(263, 55%, 52%);
+    --Gris-100: hsl(214, 17%, 92%);
+    --Gris-200: hsl(0, 0%, 81%);
+    --Gris400: hsl(224, 10%, 45%);
+    --Gris-500: hsl(217, 19%, 35%);
+    --Bleu-foncé: hsl(219, 29%, 14%);
+    --Noir: hsl(0, 0%, 7%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--Gris-200);
+}
+main {
+    color: var(--Blanc);
+    padding: clamp(0.9rem, 5vw, 1.875rem);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/* les textes (text) */
+p {
+    margin-block-end: 15px;
+    font-size: 17px;
+    font-weight: 600;
+}
+blockquote {
+    font-size: 13px;
+}
+
+/* les sections temoignages (testimony section ) */
+.testimony-daniel, .testimony-jonathan, .testimony-jeanette, .testimony-patrick, .testimony-kira {
+    padding-block: 1.25rem;
+    padding-inline: 1.25rem;
+    border-radius: 0.3rem;
+    margin-block-end: 1.06rem;
+    box-shadow: 10px 7px 20px hsla(217, 19%, 35%, 0.3);
+    max-width: 315px;
+}
+.testimony-daniel {
+    background-color: var(--Violet-500);
+}
+.testimony-jonathan {
+    background-color: var(--Gris-500);
+}
+.testimony-jeanette {
+    background-color: var(--Gris-100);
+    color: var(--Gris-500);
+}
+.testimony-patrick {
+    background-color: var(--Bleu-foncé);
+}
+.testimony-kira {
+    background-color: var(--Gris-100);
+    color: var(--Gris-500);
+}
+
+/* entetes des sections temoignage (header testimony ) */
+.testimony-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-block-end: 15px;
+}
+
+/* section auteur (author) */
+.author {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.author-name {
+    font-weight: 500;
+}
+.certification {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* images */
+.testimony-header img {
+    
+    border-radius: 2.31rem;
+}
+.testimony-daniel img {
+    border: solid 3px var(--Violet-300);
+}
+.testimony-patrick img {
+    border: solid 3px var(--Violet-500);
+}
+
+/* Footer */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding-block-end: 15px;
+    padding-inline: 15px;
+}
+.attribution a {
+    color: hsl(209, 90%, 45%);
+}
+
+@media (min-width: 1077px) {
+    main {
+        max-width: 1100px;
+        margin-inline: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        gap: 30px;
+        grid-template-areas: 
+         "daniel daniel jonathan kira"
+         "jeanette patrick patrick kira";
+
+        align-items: stretch; 
+    }
+    .testimony-daniel {
+        grid-area: daniel;
+    }
+    .testimony-jonathan {
+        grid-area: jonathan;
+    }
+    .testimony-kira  {
+        grid-area: kira;
+    }
+    .testimony-jeanette {
+        grid-area: jeanette;
+    }
+    .testimony-patrick {
+        grid-area: patrick;
+    }
+    .testimony-daniel, .testimony-jonathan, 
+    .testimony-jeanette, .testimony-patrick, 
+    .testimony-kira {
+        max-width: initial;
+        margin-block-end: 0px;
+        height: 100%;
+    }
+}
